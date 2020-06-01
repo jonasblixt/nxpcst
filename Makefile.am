@@ -19,6 +19,7 @@ cst_SOURCES = cst.c \
 			  cst_lexer.l
 
 cst_CFLAGS = -I $(top_srcdir)/include/ \
+			 -I $(top_buildir)/ \
 				-DREMOVE_ENCRYPTION \
 				$(OPENSSL_CFLAGS)
 
