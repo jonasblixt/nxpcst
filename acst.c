@@ -41,6 +41,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
                                 INCLUDE FILES
 =============================================================================*/
 #include <string.h>
+#include <stdlib.h>
 #include <time.h>
 #include <openssl/x509v3.h>
 #include "err.h"
@@ -786,7 +787,7 @@ void encrypt_images(ahab_data_t *ahab_data,
 
         uint8_t hash_type = ahab_container_image_get_hash(image);
         int32_t hash_size = ahab_get_hash_size_by_sha_type(hash_type);
-        uint8_t *hash = malloc(hash_size);
+        uint8_t *hash = malloc(hash_size & 0xFFFF);
 
         if (NULL ==  hash) {
             error("Cannot allocate memory for the hash value of the plaintext");
