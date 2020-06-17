@@ -1,10 +1,11 @@
 
+BUILT_SOURCES = cst_parser.h
 AM_YFLAGS = -d
 
-BUILD_SOURCES = cst_parser.h
 
 bin_PROGRAMS = cst \
 			   srk_tool
+
 
 cst_SOURCES = cst.c \
 			  acst.c \
