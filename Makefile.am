@@ -2,7 +2,6 @@
 BUILT_SOURCES = cst_parser.h
 AM_YFLAGS = -d
 
-
 bin_PROGRAMS = cst \
 			   srk_tool
 
@@ -13,11 +12,11 @@ cst_SOURCES = cst.c \
 			  adapt_layer_openssl.c \
 		      csf_cmd_aut_dat.c \
 		      csf_cmd_ins_key.c \
+			  csf_cmd_misc.c \
 			  err.c \
 			  pkey.c \
-		  	  srk_helper.c \
-			  csf_cmd_misc.c \
 			  ssl_wrapper.c \
+		  	  srk_helper.c \
 			  cst_parser.y \
 			  cst_lexer.l
 
