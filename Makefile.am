@@ -1,5 +1,7 @@
 
-AM_YFLAGS = -d -t
+AM_YFLAGS = -d
+
+BUILD_SOURCES = cst_parser.h
 
 bin_PROGRAMS = cst \
 			   srk_tool
@@ -21,6 +23,10 @@ cst_SOURCES = cst.c \
 cst_CFLAGS = -I $(top_srcdir)/include/ \
 			 -I $(top_buildir)/ \
 				-DREMOVE_ENCRYPTION \
+				-std=c99 \
+				-fPIC \
+				-m64 \
+				-D_POSIX_C_SOURCE=200809L \
 				$(OPENSSL_CFLAGS)
 
 cst_LDADD = $(OPENSSL_LIBS)
